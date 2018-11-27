@@ -15,6 +15,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.banner-main{
+  min-height 412.5px
+  background url('banner-main-bg.png') no-repeat
+  background-size 100% 412.5px
+}
 </style>
 
 

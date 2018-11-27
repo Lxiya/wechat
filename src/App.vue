@@ -12,14 +12,14 @@
 
 <script>
 /* import components */
-import Footer from "./components/common/footer/Footer";
+import Footer from './components/common/footer/Footer'
 
 export default {
-  name: "App",
-  components: {
-    "jdh-footer": Footer
-  }
-};
+	name: 'App',
+	components: {
+		'jdh-footer': Footer
+	}
+}
 </script>
 
 <style lang="stylus">

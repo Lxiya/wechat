@@ -1,7 +1,7 @@
 <template>
 	<div id="footer" class="footer">
 		<footer>
-			<mt-tabbar v-model="selected">
+			<mt-tabbar v-model="selected" fixed='true'>
 				<mt-tab-item id="首页">
 					<router-link to="/index">首页</router-link>
 				</mt-tab-item>

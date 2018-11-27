@@ -13,7 +13,11 @@ import ShopCart from './components/shopCart/ShopCart'
 import Person from './components/person/Person'
 
 Vue.config.productionTip = false
-Vue.use(MintUI)
+Vue.use(MintUI, {
+  tabbar: {
+    fixed: true
+  }
+})
 Vue.use(VueRouter)
 
 const routes = [
