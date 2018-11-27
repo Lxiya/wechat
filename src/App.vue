@@ -12,7 +12,6 @@
 
 <script>
 /* import components */
-import HelloWorld from "./components/HelloWorld";
 import Footer from "./components/common/footer/Footer";
 
 export default {
