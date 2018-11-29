@@ -1,7 +1,7 @@
 <template>
 	<div id="footer" class="footer">
 		<footer>
-			<mt-tabbar v-model="selected" fixed='true'>
+			<mt-tabbar v-model="selected" :fixed="fixed">
 				<mt-tab-item id="首页">
 					<router-link to="/index">首页</router-link>
 				</mt-tab-item>
@@ -27,7 +27,8 @@ export default {
 	name: 'Footer',
 	data() {
 		return {
-			selected: '首页'
+			selected: '首页',
+			fixed:true
 		}
 	}
 }

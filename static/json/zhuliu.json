@@ -1,0 +1,42 @@
+{
+  "data": [
+    {
+      "goodsMap": [
+        {
+          "goodsImg": "/static/img/index/banner/test-img.png",
+          "goodsName": "52度五粮液（普通...",
+          "goodsPrice": "￥998.00/箱"
+        },
+        {
+          "goodsImg": "/static/img/index/banner/test-img2.png",
+          "goodsName": "法国拉菲传奇波尔...",
+          "goodsPrice": "￥998.00/箱"
+        },
+        {
+          "goodsImg": "/static/img/index/banner/test-img3.png",
+          "goodsName": "澳洲原瓶进口登机...",
+          "goodsPrice": "￥998.00/箱"
+        }
+      ]
+    },
+    {
+      "goodsMap": [
+        {
+          "goodsImg": "/static/img/index/banner/test-img.png",
+          "goodsName": "52度五粮液（普通...",
+          "goodsPrice": "￥998.00/箱"
+        },
+        {
+          "goodsImg": "/static/img/index/banner/test-img2.png",
+          "goodsName": "法国拉菲传奇波尔...",
+          "goodsPrice": "￥998.00/箱"
+        },
+        {
+          "goodsImg": "/static/img/index/banner/test-img3.png",
+          "goodsName": "澳洲原瓶进口登机...",
+          "goodsPrice": "￥998.00/箱"
+        }
+      ]
+    }
+  ]
+}

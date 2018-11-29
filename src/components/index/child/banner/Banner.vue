@@ -1,12 +1,15 @@
 <template>
   <div>
     <div id="banner" class="banner">
-      <div id="banner-main" class="banner-main">
-        <jdh-banner-main></jdh-banner-main>
-      </div>
-      <div id="banner-goods">
-        <jdh-banner-goods-item></jdh-banner-goods-item>
-      </div>
+        <div id="banner-main">
+          <jdh-banner-main></jdh-banner-main>
+        </div>
+        <div id="banner-goods-item">
+          <div id="store" class="store">
+            
+          </div>
+          <div id="hotel" class="hotel"></div>
+        </div>
     </div>
   </div>
 </template>
