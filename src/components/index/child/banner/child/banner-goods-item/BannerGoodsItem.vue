@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="banner-goods-item" v-for="item in imgItems">
+    <div class="banner-goods-item">
       <div class="goods-item-title">
-        <img :src="item.title" alt="酒水推荐">
+        <slot name="itemTitleImg"></slot>
       </div>
       <div class="goods-item-bg">
-        <img :src="item.bgImg" alt="酒水推荐">
+        <slot name="itemBg"></slot>
       </div>
       <div class="goods-list">
-        <jdh-goods-list></jdh-goods-list>
+        <jdh-goods-list :goodsList="goodsList"></jdh-goods-list>
       </div>
     </div>
   </div>
@@ -16,35 +16,23 @@
 
 <script>
 /* import components*/
-import GoodsList from "components/common/goods/GoodsList";
+import GoodsList from 'components/common/goods/GoodsList'
 
 export default {
-  name: "BannerGoodsItem",
-  components: {
-    "jdh-goods-list": GoodsList
-  },
-  data() {
-    return {
-      imgItems: [
-        {
-          title: "/static/img/index/banner/shiti_title.png",
-          bgImg: "/static/img/index/banner/shiti_bg.png",
-          type:''
-        },
-        {
-          title: "/static/img/index/banner/jiudian_title.png",
-          bgImg: "/static/img/index/banner/jiudian_bg.png",
-          type:''
-        },
-        {
-          title: "/static/img/index/banner/xiyan_title.png",
-          bgImg: "/static/img/index/banner/xiyan_bg.png",
-          type:''
-        }
-      ]
-    };
-  }
-};
+	props: {
+		// sotre:[Array,Object],
+		// hotel:[Array,Object],
+		// wedding:[Array,Object]
+		goodsList: [Array, Object]
+	},
+	name: 'BannerGoodsItem',
+	components: {
+		'jdh-goods-list': GoodsList
+	},
+	data() {
+		return {}
+	}
+}
 </script>
 <style lang="stylus" scoped>
 .banner-goods-item
