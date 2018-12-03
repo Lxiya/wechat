@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import 'normalize.css'
 
 /* import components*/
 import App from './App'
@@ -49,7 +50,8 @@ const routes = [
   }
 ]
 var router = new VueRouter({
-  routes: routes
+  routes: routes,
+  linkActiveClass: 'footer-active'
 })
 
 new Vue({

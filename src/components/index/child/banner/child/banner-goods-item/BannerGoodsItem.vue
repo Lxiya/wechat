@@ -8,7 +8,7 @@
         <slot name="itemBg"></slot>
       </div>
       <div class="goods-list">
-        <jdh-goods-list :goodsList="goodsList"></jdh-goods-list>
+        <jdh-goods-list :goodsList="goodsList" :borderColor="garyborder"></jdh-goods-list>
       </div>
     </div>
   </div>
@@ -16,23 +16,22 @@
 
 <script>
 /* import components*/
-import GoodsList from 'components/common/goods/GoodsList'
+import GoodsList from "components/common/goods/GoodsList";
 
 export default {
-	props: {
-		// sotre:[Array,Object],
-		// hotel:[Array,Object],
-		// wedding:[Array,Object]
-		goodsList: [Array, Object]
-	},
-	name: 'BannerGoodsItem',
-	components: {
-		'jdh-goods-list': GoodsList
-	},
-	data() {
-		return {}
-	}
-}
+  props: {
+    goodsList: [Array, Object]
+  },
+  name: "BannerGoodsItem",
+  components: {
+    "jdh-goods-list": GoodsList
+  },
+  data() {
+    return {
+      garyborder: true
+    };
+  }
+};
 </script>
 <style lang="stylus" scoped>
 .banner-goods-item

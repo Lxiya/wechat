@@ -119,6 +119,50 @@
           }
         ]
       }
+    ],
+    "hotsell": [
+      {
+        "goodsMap": [
+          {
+            "goodsImg": "/static/img/index/banner/test-img4.png",
+            "goodsName": "汾酒玻汾42度475ml单瓶装 清香型白酒整箱六瓶",
+            "goodsPrice": "￥998.00/箱"
+          },
+          {
+            "goodsImg": "/static/img/index/banner/test-img.png",
+            "goodsName": "米酒 米酒汁 375ml/瓶甜米酒清酒月子酒孝感米酒",
+            "goodsPrice": "￥66.00/箱"
+          }
+        ]
+      },
+      {
+        "goodsMap": [
+          {
+            "goodsImg": "/static/img/index/banner/test-img4.png",
+            "goodsName": "汾酒玻汾42度475ml单瓶装 清香型白酒整箱六瓶",
+            "goodsPrice": "￥998.00/箱"
+          },
+          {
+            "goodsImg": "/static/img/index/banner/test-img.png",
+            "goodsName": "米酒 米酒汁 375ml/瓶甜米酒清酒月子酒孝感米酒",
+            "goodsPrice": "￥66.00/箱"
+          }
+        ]
+      },
+      {
+        "goodsMap": [
+          {
+            "goodsImg": "/static/img/index/banner/test-img4.png",
+            "goodsName": "汾酒玻汾42度475ml单瓶装 清香型白酒整箱六瓶",
+            "goodsPrice": "￥998.00/箱"
+          },
+          {
+            "goodsImg": "/static/img/index/banner/test-img.png",
+            "goodsName": "米酒 米酒汁 375ml/瓶甜米酒清酒月子酒孝感米酒",
+            "goodsPrice": "￥66.00/箱"
+          }
+        ]
+      }
     ]
   }
 }

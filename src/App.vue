@@ -4,9 +4,6 @@
     <section>
       <router-view></router-view>
     </section>
-
-    <div style="height:2000px"></div>
-
     <!-- 底部导航 -->
     <jdh-footer></jdh-footer>
   </div>
@@ -25,6 +22,12 @@ export default {
 </script>
 
 <style lang="stylus">
+a
+  text-decoration none
+  color #666666
+  &.footer-active{
+    color #007ef4
+  }
 h1
   margin 0
   padding 0
