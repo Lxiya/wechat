@@ -42,10 +42,12 @@ img{
   margin-bottom 5px
 }
 a{
-  display inline-block
+  display block
+  padding-top 8px
+  padding-bottom 4.5px
 }
 .mint-tab-item {
-  padding-bottom 4.5px
+  padding 0
 }
 </style>
 

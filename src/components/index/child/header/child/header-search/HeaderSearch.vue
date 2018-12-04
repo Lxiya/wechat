@@ -44,9 +44,10 @@ export default {
     .position-icon
       .icon
         display inline-block
-        vertical-align text-top
+        vertical-align text-bottom
     i
       font-style normal
+      font-size 1.6rem
   .search
     position relative
     .search-icon

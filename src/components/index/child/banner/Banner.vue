@@ -71,6 +71,9 @@ export default {
 
 <style lang="stylus">
 #hot-sell
+  h1.item-name{
+    margin-bottom 0
+  }
   .goods-list-row:first-child
     border-top 1px #f8f8f8 solid
   .row-item
@@ -82,9 +85,9 @@ export default {
         padding-right 13px
         margin-top 19px
         & h1, span.item-price
-          font-size 14px
+          font-size 1.4rem
         & span.item-price
           display inline-block
-          margin-top 11px
+          margin-top 9px
 </style>
 

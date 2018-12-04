@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <jdh-header></jdh-header>
-    <jdh-banner></jdh-banner>
-    <div id="footer-split" class="footer-split">
-      <img
-        src="/static/img/index/footer/footer-split.png"
-        width="201"
-        style="display:block; margin:0 auto;"
-      >
-    </div>
-    <div class="h-28" style="height:28px"></div>
-  </div>
+	<div>
+		<jdh-header></jdh-header>
+		<jdh-banner></jdh-banner>
+		<div id="footer-split" class="footer-split">
+			<img
+				src="/static/img/index/footer/footer-split.png"
+				width="201"
+				style="display:block; margin:0 auto;"
+			>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -22,16 +21,16 @@ import Header from "./child/header/Header";
 import Banner from "./child/banner/Banner";
 
 export default {
-  name: "Index",
-  components: {
-    "jdh-header": Header,
-    "jdh-banner": Banner
-  }
+	name: "Index",
+	components: {
+		"jdh-header": Header,
+		"jdh-banner": Banner
+	}
 };
 </script>
 
 <style lang="stylus">
 .footer-split
-  padding 28px 0
+	padding 23px 0
 </style>
 

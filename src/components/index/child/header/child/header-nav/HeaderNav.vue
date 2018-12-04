@@ -84,5 +84,6 @@ bg-img($color)
           bg-img('orange')
       span
         text-align center
+        font-size 1.25rem
 </style>
 

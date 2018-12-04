@@ -24,8 +24,13 @@ export default {
 	justify-content start
 	margin-top 23.5px
 	.news-text{
+		display block
+		max-width 100%
+		white-space nowrap
+		overflow hidden
+		text-overflow ellipsis
 		margin-left 10px
-		font-size 12px
+		font-size 1.2rem
 	}
 }
 </style>
