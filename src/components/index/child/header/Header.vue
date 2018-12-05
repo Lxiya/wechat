@@ -30,7 +30,7 @@ header
   min-height 277px
   background url('header-bg.png') no-repeat
   background-size 100% 100%
-  padding-top 30px
+  padding-top 12px
   padding-left 13px
   padding-right 15px
 </style>
