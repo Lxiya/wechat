@@ -2,10 +2,10 @@
   <div>
     <div class="banner-goods-item">
       <div class="goods-item-title">
-        <slot name="itemTitleImg"></slot>
+        	<img :src="'https://www.jdh19.com/' + goodsList.title" alt="实体店用酒" slot="itemTitleImg">
       </div>
       <div class="goods-item-bg">
-        <slot name="itemBg"></slot>
+        	<img v-if="goodsList.banner!=undefined" :src="'https://www.jdh19.com/' + goodsList.banner.imageUrl" alt="实体店用酒" slot="itemBg">
       </div>
       <div class="goods-list">
         <jdh-goods-list :goodsList="goodsList" :borderColor="garyborder"></jdh-goods-list>

@@ -44,6 +44,11 @@ ul, ol
 	margin 0
 	padding 0
 h1.item-name
+	box-sizing border-box
+	width 96px
+	overflow hidden
+	text-overflow ellipsis
+	white-space nowrap
 	font-size 1.2rem
 	margin-bottom 7px
 	font-weight normal
