@@ -9,7 +9,7 @@
           <i>济南市</i>
         </span>
       </div>
-      <div class="search">
+      <div class="search" @click="showMsg()">
         <span class="search-icon">
           <img src="./search-icon.png" alt width="14">
         </span>
@@ -30,7 +30,12 @@
 
 <script>
 export default {
-	name:'HeaderSearch'
+	name:'HeaderSearch',
+  methods:{
+    showMsg(){
+      alert('点击了搜索') 
+    }
+  }
 }
 </script>
 

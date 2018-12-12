@@ -3,8 +3,8 @@
 		<div id="header-nav" class="header-nav">
 			<div class="nav-icon">
 				<ul class="icon-list">
-					<li v-for="item in iconList">
-						<i><img :src="'https://www.jdh19.com' + item.iconUrl" alt=""></i>
+					<li v-for="item in iconList" @click="showDetail(item.parameter)">
+						<i><img :src="item.iconUrl" alt=""></i>
 						<span>{{item.iconName}}</span>
 					</li>
 				</ul>
@@ -31,12 +31,19 @@ export default {
       iconList:[]
     }
 	},
+	methods:{
+		showDetail(parameter){
+			// alert(parameter)
+			window.homepage.fiveMenusClick(parameter)
+		}
+	},
 	mounted() {
     let _this = this
-		this.$http.post("/api/app/new/getHeadClass").then(response => {
+		this.$http.post("/app/new/getHeadClass").then(response => {
       let iconList = response.data.data.fenlei
       for(var i = 0; i<=4; i++){
         _this.iconList.push({
+					'parameter':iconList[i].parameter,
           'iconUrl':iconList[i].url,
           'iconName':iconList[i].name
         })

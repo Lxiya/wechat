@@ -5,8 +5,8 @@
 			v-for="(goodsItem,index) in goodsList.goodsList"
 			:class="{'no-border-bootm':(index > 2)}"
 		>
-			<div class="row-item">
-				<img :src="'https://www.jdh19.com/' +goodsItem.imageUrl" alt="商品图片">
+			<div class="row-item" @click="showGoodsDetail(goodsItem.infoIds)">
+				<img :src="goodsItem.imageUrl" alt="商品图片">
 				<div>
 					<h1 class="item-name">{{goodsItem.name}}</h1>
 					<span class="item-price" v-if="goodsItem.price==null ||goodsItem.price==''">价格暂不可见</span>
@@ -23,6 +23,12 @@ export default {
 	props: {
 		goodsList: [Object, Array],
 		borderColor: Boolean
+	},
+	methods:{
+		showGoodsDetail(wholesaleId){
+			window.homepage.productDetail(wholesaleId)
+			// alert(wholesaleId)
+		}
 	}
 };
 </script>

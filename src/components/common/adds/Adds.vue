@@ -2,8 +2,8 @@
   <div class="adds">
     <div class="adds-list">
       <mt-swipe :auto="auto" :show-indicators="showIndicators">
-        <mt-swipe-item v-for="(item,index) in addsImgList" :key="index">
-          <img :src="item">
+        <mt-swipe-item>
+          <img :src="addsImgList.imageUrl" @click="showDetail(addsImgList.type,addsImgList.infoId)">
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -17,14 +17,29 @@ export default {
     return {
       auto: 2000,
       showIndicators: false,
-      addsImgList: []
+      addsImgList: ''
     };
   },
   mounted() {
-    this.$http.get("/static/json/addsimg.json").then(response => {
+    /* 首页广告位 */
+    this.$http.post("/app/new/wineBanner").then(response => {
       response = response.body;
-      this.addsImgList = response.data.addImgs;
+      this.addsImgList = response.data.banner
     });
+  },
+  methods:{
+    showDetail(type, id) {
+			switch (type) {
+				case '2':
+					window.homepage.productDetail(id);
+					break;
+				case '3':
+					window.homepage.shopInfoClick(id);
+					break;
+        default:
+          alert('没有匹配到相应的参数')
+			}
+		}
   }
 };
 </script>

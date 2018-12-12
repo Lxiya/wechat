@@ -5,7 +5,7 @@
 			<router-view></router-view>
 		</section>
 		<!-- 底部导航 -->
-		<jdh-footer></jdh-footer>
+		<!-- <jdh-footer></jdh-footer> -->
 	</div>
 </template>
 
@@ -38,7 +38,6 @@ body
 	background-color #f5f5f5
 	min-height 100%
 	overflow-y scroll
-	margin-bottom 50.5px
 ul, ol
 	list-style none
 	margin 0

@@ -4,7 +4,7 @@
 		<jdh-banner></jdh-banner>
 		<div id="footer-split" class="footer-split">
 			<img
-				src="/static/img/index/footer/footer-split.png"
+				src="static/img/index/footer/footer-split.png"
 				width="201"
 				style="display:block; margin:0 auto;"
 			>

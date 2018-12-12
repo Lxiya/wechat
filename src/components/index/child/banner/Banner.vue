@@ -9,8 +9,7 @@
 					<jdh-banner-goods-item :goodsList="store"></jdh-banner-goods-item>
 				</div>
 				<div id="hotel" class="hotel">
-					<jdh-banner-goods-item :goodsList="hotel">
-					</jdh-banner-goods-item>
+					<jdh-banner-goods-item :goodsList="hotel"></jdh-banner-goods-item>
 				</div>
 				<div id="wedding" class="wedding">
 					<jdh-banner-goods-item :goodsList="wedding"></jdh-banner-goods-item>
@@ -50,22 +49,25 @@ export default {
 	},
 	mounted() {
     /* 实体门店 */
-		this.$http.post("/api/app/new/entityStore").then(response => {
+		this.$http.post("/app/new/entityStore").then(response => {
 			response = response.body;
 			this.store = response.data;
+			console.log(response)
 		});
     /* 酒店用酒 */
-		this.$http.post("/api/app/new/hotelWine").then(response => {
+		this.$http.post("/app/new/hotelWine").then(response => {
 			response = response.body;
 			this.hotel = response.data;
+			console.log(response)
 		});
     /* 喜宴用酒 */
-		this.$http.post("/api/app/new/likeWine").then(response => {
+		this.$http.post("/app/new/likeWine").then(response => {
 			response = response.body;
 			this.wedding = response.data;
+			console.log(response)
 		});
     /* 热卖推荐 */
-		this.$http.post("/api/app/new/recommend").then(response => {
+		this.$http.post("/app/new/recommend").then(response => {
 			response = response.body;
 			this.hotSell = response.data;
 		});

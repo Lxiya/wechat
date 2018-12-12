@@ -27,7 +27,7 @@ export default {
 	},
 	mounted() {
 		/* 主流酒水推荐 */
-		this.$http.post("/api/app/new/wineCheap").then(response => {
+		this.$http.post("/app/new/wineCheap").then(response => {
 			response = response.body;
 			this.goodsList = response.data;
 		});
