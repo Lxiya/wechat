@@ -30,6 +30,7 @@ export default {
 		this.$http.post("/app/new/wineCheap").then(response => {
 			response = response.body;
 			this.goodsList = response.data;
+			console.log(response)
 		});
 	}
 };

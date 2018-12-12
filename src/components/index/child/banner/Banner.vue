@@ -52,19 +52,18 @@ export default {
 		this.$http.post("/app/new/entityStore").then(response => {
 			response = response.body;
 			this.store = response.data;
-			console.log(response)
+			
 		});
     /* 酒店用酒 */
 		this.$http.post("/app/new/hotelWine").then(response => {
 			response = response.body;
 			this.hotel = response.data;
-			console.log(response)
+		
 		});
     /* 喜宴用酒 */
 		this.$http.post("/app/new/likeWine").then(response => {
 			response = response.body;
 			this.wedding = response.data;
-			console.log(response)
 		});
     /* 热卖推荐 */
 		this.$http.post("/app/new/recommend").then(response => {
