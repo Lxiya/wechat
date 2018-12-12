@@ -27,7 +27,6 @@ export default {
 	methods:{
 		showGoodsDetail(wholesaleId){
 			window.homepage.productDetail(wholesaleId)
-			// alert(wholesaleId)
 		}
 	}
 };

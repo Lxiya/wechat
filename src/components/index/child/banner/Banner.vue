@@ -35,7 +35,7 @@ export default {
 	name: "Banner",
 	data() {
 		return {
-      /* 商品列表 */
+			/* 商品列表 */
 			store: {},
 			hotel: {},
 			wedding: {},
@@ -48,24 +48,22 @@ export default {
 		"jdh-banner-adds": Adds
 	},
 	mounted() {
-    /* 实体门店 */
+		/* 实体门店 */
 		this.$http.post("/app/new/entityStore").then(response => {
 			response = response.body;
 			this.store = response.data;
-			
 		});
-    /* 酒店用酒 */
+		/* 酒店用酒 */
 		this.$http.post("/app/new/hotelWine").then(response => {
 			response = response.body;
 			this.hotel = response.data;
-		
 		});
-    /* 喜宴用酒 */
+		/* 喜宴用酒 */
 		this.$http.post("/app/new/likeWine").then(response => {
 			response = response.body;
 			this.wedding = response.data;
 		});
-    /* 热卖推荐 */
+		/* 热卖推荐 */
 		this.$http.post("/app/new/recommend").then(response => {
 			response = response.body;
 			this.hotSell = response.data;
