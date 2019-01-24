@@ -39,7 +39,9 @@ export default {
 			store: {},
 			hotel: {},
 			wedding: {},
-			hotSell: {}
+			hotSell: {},
+			/* 用户Id */
+			userId: ""
 		};
 	},
 	components: {
@@ -48,26 +50,49 @@ export default {
 		"jdh-banner-adds": Adds
 	},
 	mounted() {
+		/* 尝试获取userId */
+		let userId = window.location.search.substr(1).split("=")[1];
+		userId ? (this.userId = userId) : (this.userId = "");
 		/* 实体门店 */
-		this.$http.post("/app/new/entityStore").then(response => {
-			response = response.body;
-			this.store = response.data;
-		});
+		this.$http
+			.post(
+				"/app/new/entityStore",
+				{ userId: this.userId },
+				{ emulateJSON: true }
+			)
+			.then(response => {
+				response = response.body;
+				this.store = response.data;
+			});
 		/* 酒店用酒 */
-		this.$http.post("/app/new/hotelWine").then(response => {
-			response = response.body;
-			this.hotel = response.data;
-		});
+		this.$http
+			.post(
+				"/app/new/hotelWine",
+				{ userId: this.userId },
+				{ emulateJSON: true }
+			)
+			.then(response => {
+				response = response.body;
+				this.hotel = response.data;
+			});
 		/* 喜宴用酒 */
-		this.$http.post("/app/new/likeWine").then(response => {
-			response = response.body;
-			this.wedding = response.data;
-		});
+		this.$http
+			.post("/app/new/likeWine", { userId: this.userId }, { emulateJSON: true })
+			.then(response => {
+				response = response.body;
+				this.wedding = response.data;
+			});
 		/* 热卖推荐 */
-		this.$http.post("/app/new/recommend").then(response => {
-			response = response.body;
-			this.hotSell = response.data;
-		});
+		this.$http
+			.post(
+				"/app/new/recommend",
+				{ userId: this.userId },
+				{ emulateJSON: true }
+			)
+			.then(response => {
+				response = response.body;
+				this.hotSell = response.data;
+			});
 	}
 };
 </script>
@@ -76,6 +101,7 @@ export default {
 #hot-sell
 	h1.item-name
 		margin-bottom 0
+		width 13rem
 	.goods-list-row:first-child
 		border-top 1px #f8f8f8 solid
 	.row-item

@@ -41,10 +41,9 @@ body
 ul, ol
 	list-style none
 	margin 0
-	padding 0
 h1.item-name
 	box-sizing border-box
-	width 96px
+	width 10rem
 	overflow hidden
 	text-overflow ellipsis
 	white-space nowrap

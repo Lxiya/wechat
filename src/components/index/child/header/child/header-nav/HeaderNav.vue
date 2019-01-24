@@ -11,7 +11,7 @@
 			</div>
 
 			<div class="nav-news">
-				<jds-header-nav-news></jds-header-nav-news>
+				<jdh-header-nav-news></jdh-header-nav-news>
 			</div>
 		</div>
 	</div>
@@ -24,7 +24,7 @@ import HeaderNews from "../header-news/HeaderNews";
 export default {
 	name: "HeaderNav",
 	components: {
-		"jds-header-nav-news": HeaderNews
+		"jdh-header-nav-news": HeaderNews
 	},
 	data() {
 		return{
@@ -71,6 +71,7 @@ bg-img($color)
 		.icon-list
 			display flex
 			justify-content space-between
+			padding-left 0
 		li
 			display flex
 			flex-direction column

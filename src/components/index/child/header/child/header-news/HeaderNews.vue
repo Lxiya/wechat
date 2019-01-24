@@ -28,7 +28,6 @@ export default {
 	},
 	methods:{
 		showDetail(newsId){
-			alert(newsId)
 			window.homepage.newsClick(newsId)
 		}
 	},

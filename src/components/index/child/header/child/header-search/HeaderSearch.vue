@@ -2,14 +2,12 @@
 	<div>
 		<div id="header-search" class="header-search">
 			<div class="position">
-				<router-link to="/position">
-					<span class="position-icon">
-						<img src="./position-icon.png" alt="定位" width="16.5" height="21" class="icon">
-						<i>济南市</i>
-					</span>
-				</router-link>
+				<span class="position-icon" @click="$emit('alertPosition')">
+					<img src="./position-icon.png" alt="定位" width="12" height="14" class="icon">
+					<i>{{currentPosition.areaName}}</i>
+				</span>
 			</div>
-			<div class="search" @click="showMsg()">
+			<div class="search" @click="showDetail(currentPosition.areaId)">
 				<span class="search-icon">
 					<img src="./search-icon.png" alt width="14">
 				</span>
@@ -31,9 +29,12 @@
 <script>
 export default {
 	name: "HeaderSearch",
-	methods: {
-		showMsg() {
-			alert("点击了搜索");
+	props: {
+		currentPosition: Object
+	},
+	methods:{
+		showDetail(areaId){
+			window.homepage.searchClick(areaId)
 		}
 	}
 };
@@ -47,13 +48,20 @@ export default {
 	color #fff
 	.position
 		.position-icon
+			display flex
+			align-items center
 			.icon
 				display inline-block
-				vertical-align text-bottom
+				margin-right 0.5rem
 		i
 			font-style normal
-			font-size 1.6rem
+			font-size 1.2rem
 			color #ffffff
+			white-space nowrap
+			max-width 5rem
+			overflow hidden
+			text-overflow ellipsis
+
 	.search
 		position relative
 		.search-icon

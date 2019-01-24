@@ -19,18 +19,22 @@ export default {
 	name: "BannerMain",
 	data() {
 		return {
-			goodsList: {}
+			goodsList: {},
+			/* 用户Id */
+			userId:''
 		};
 	},
 	components: {
 		"jdh-goods-list": GoodsList
 	},
 	mounted() {
+		/* 判定是否登陆,尝试获取userId */
+		let userId = window.location.search.substr(1).split('=')[1]
+		userId?(this.userId = userId):(this.userId='')
 		/* 主流酒水推荐 */
-		this.$http.post("/app/new/wineCheap").then(response => {
+		this.$http.post("/app/new/wineCheap",{userId:this.userId},{ emulateJSON: true }).then(response => {
 			response = response.body;
 			this.goodsList = response.data;
-			console.log(response)
 		});
 	}
 };

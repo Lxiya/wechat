@@ -10,12 +10,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
+      '/': {
         target: 'https://www.jdh19.com',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
+        changeOrigin: true
       }
     },
 
@@ -32,7 +29,7 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'eval-source-map',
 
     // If you have problems debugging vue-files in devtools,
     // set this to false - it *may* help
@@ -49,7 +46,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/images/jdh-wechat/',
 
     /**
      * Source Maps

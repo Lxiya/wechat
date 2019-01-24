@@ -1,25 +1,37 @@
 <template>
 	<div>
-		<mt-header title="选择您所在的位置" :fixed="fixed">
-			<router-link to="/" slot="left">
-				<mt-button icon="back">返回</mt-button>
-			</router-link>
-		</mt-header>
-		<div class="position-list">
-			<div class="list-item province">
-				<span class="province-item" v-for="item in provinceList">
-					<a @click="postCity(item.id)">{{item.name}}</a>
-				</span>
-			</div>
-			<div class="list-item city" v-show="selectedProvince">
-				<span class="province-item" v-for="item in cityList">
-					<a @click="postArea(item.id)">{{item.name}}</a>
-				</span>
-			</div>
-			<div class="list-item area" v-show="selectedArea">
-				<span class="province-item" v-for="item in areaList">
-					<a>{{item.name}}</a>
-				</span>
+		<div class="header-position">
+			<mt-header title="选择您所在的位置" :fixed="fixed">
+				<router-link to="/" slot="left">
+					<mt-button icon="back" @click="$emit('closePosition')">返回</mt-button>
+				</router-link>
+			</mt-header>
+			<div class="position-list">
+				<div class="list-item province">
+					<span class="province-item" v-for="item in provinceList">
+						<a
+							@click="postCity(item.id,item.name)"
+							:class="{active:activeProvince==item.name}"
+						>{{item.name}}</a>
+					</span>
+				</div>
+				<div class="list-item city" v-show="selectedProvince">
+					<span class="province-item" v-for="item in cityList">
+						<a
+							@click="postArea(item.id,item.name)"
+							:class="{active:activeCity == item.name}"
+						>{{item.name}}</a>
+					</span>
+				</div>
+				<div class="list-item area" v-show="selectedArea">
+					<span
+						class="province-item"
+						v-for="item in areaList"
+						@click="$emit('closePosition',item.id,item.name)"
+					>
+						<a>{{item.name}}</a>
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -39,7 +51,10 @@ export default {
 			/* 控制列表 */
 			provinceList: [],
 			cityList: [],
-			areaList: []
+			areaList: [],
+			/* 控制高亮 */
+			activeProvince: "",
+			activeCity: ""
 		};
 	},
 	mounted() {
@@ -51,21 +66,27 @@ export default {
 	},
 	methods: {
 		/* 请求市 */
-		postCity(provinceId) {
-			this.$http
-				.post(
-					"/app/new/secacheCitys",
-					{ parentId: provinceId },
-					{ emulateJSON: true }
-				)
-				.then(reponse => {
-					reponse = reponse.body;
-					this.cityList = reponse.data;
-					this.selectedProvince = true;
-				});
+		postCity(provinceId, name) {
+			if (provinceId == 0) {
+				this.$emit("closePosition", provinceId, name);
+			} else {
+				this.$http
+					.post(
+						"/app/new/secacheCitys",
+						{ parentId: provinceId },
+						{ emulateJSON: true }
+					)
+					.then(reponse => {
+						reponse = reponse.body;
+						this.cityList = reponse.data;
+						this.selectedProvince = true;
+						this.selectedArea = false;
+					});
+				this.activeProvince = name;
+			}
 		},
 		/* 请求区 */
-		postArea(cityId) {
+		postArea(cityId, name) {
 			this.$http
 				.post(
 					"/app/new/secacheCitys",
@@ -77,42 +98,46 @@ export default {
 					this.areaList = reponse.data;
 					this.selectedArea = true;
 				});
+			this.activeCity = name;
 		}
 	}
 };
 </script>
 
-<style <style lang="stylus" scoped>
-.mint-header
-	background-color #143be7
-	a
-		color #fff
-div.position-list
-	display flex
-	justify-content flex-start
-	overflow hidden
-	padding-top 40px
-	width 100%
-	height 100vh
-	background-color #f3f3f3
-	div.list-item
-		height 100%
+<style lang="stylus" scoped>
+div.header-position
+	position fixed
+	left 0
+	right 0
+	z-index 3
+	.mint-header
+		background-color #143be7
+		a
+			color #fff
+	div.position-list
 		display flex
-		overflow-y scroll
-		flex-direction column
-		span
-			background-color #fff
-			// border-bottom #ccc solid 1px
-			a
-				padding 1.5rem
-				display block
-				&:active
-					background-color #143be7
-					color #fff
-				&.active
-					background-color #143be7
-					color #fff
-		& span:last-child
-			border-bottom 0 none
+		justify-content flex-start
+		overflow hidden
+		width 100%
+		height 100Vh
+		background-color #f3f3f3
+		margin-top -1px
+		div.list-item
+			display flex
+			height 100%
+			overflow-y scroll
+			flex-direction column
+			padding-bottom 3rem
+			span
+				background-color #fff
+				a
+					display block
+					font-size 1.4rem
+					padding 1.5rem
+					&:active
+						// background-color #143be7
+						color #ff4e00
+					&.active
+						color #ff4e00
 </style>
 

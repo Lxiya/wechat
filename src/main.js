@@ -13,7 +13,6 @@ import Sort from 'components/sort/Sort'
 import Message from 'components/message/Message'
 import ShopCart from 'components/shopCart/ShopCart'
 import Person from 'components/person/Person'
-import SelectPosition from 'components/index/child/header/child/header-position/HeaderPosition'
 
 Vue.config.productionTip = false
 Vue.use(MintUI, {
@@ -48,13 +47,11 @@ const routes = [
   {
     path: '/person',
     component: Person
-  },
-  {
-    path: '/position',
-    component: SelectPosition
   }
 ]
 var router = new VueRouter({
+  // mode:'history',
+  // base:'/images/jdh-wechat',
   routes: routes,
   linkActiveClass: 'footer-active'
 })

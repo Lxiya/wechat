@@ -8,7 +8,7 @@
 				<img
 					v-if="goodsList.banner!=undefined"
 					:src="goodsList.banner.imageUrl"
-					@click="showDetail(goodsList.banner.type,goodsList.banner.id)"
+					@click="showDetail(goodsList.banner.type,goodsList.banner.infoId)"
 				>
 			</div>
 			<div class="goods-list">
@@ -21,6 +21,7 @@
 <script>
 /* import components*/
 import GoodsList from "components/common/goods/GoodsList";
+
 
 export default {
 	props: {
@@ -38,14 +39,14 @@ export default {
 	methods: {
 		showDetail(type, id) {
 			switch (type) {
-				case '2':
+				case "2":
 					window.homepage.productDetail(id);
 					break;
-				case '3':
+				case "3":
 					window.homepage.shopInfoClick(id);
 					break;
-        default:
-          alert('没有匹配到相应的参数')
+				default:
+					alert("没有匹配到相应的参数");
 			}
 		}
 	}
